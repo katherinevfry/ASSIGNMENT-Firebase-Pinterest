@@ -11,8 +11,8 @@ const createPins = (array) => {
       <hr>
       <p>${item.description}</p>
       <hr>
-      <button class="btn btn-outline-danger" data-toggle="modal" data-target="#formModal" id="edit-board-btn--${item.firebaseKey}">Edit Pin</button>
-      <button class="btn btn-outline-danger" id="delete-board--${item.firebaseKey}">Delete Pin</button>
+      <button class="btn btn-outline-danger" data-toggle="modal" data-target="#formModal" id="edit-board-btn^^${item.firebaseKey}">Edit Pin</button>
+      <button class="btn btn-outline-danger" id="delete-pin^^${item.firebaseKey}">Delete Pin</button>
     </div>
   </div>`;
   });

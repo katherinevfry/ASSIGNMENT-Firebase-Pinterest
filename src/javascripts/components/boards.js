@@ -10,7 +10,7 @@ const createBoards = (array) => {
       <h5 class="card-title">${item.title}</h5>
       <hr>
       <button class="btn btn-outline-danger" id="show-pins-btn^^${item.firebaseKey}">Show Pins</button>
-      <button class="btn btn-outline-danger" id="delete-board--${item.firebaseKey}">Delete Board</button>
+      <button class="btn btn-outline-danger" id="delete-board^^${item.firebaseKey}">Delete Board</button>
     </div>
   </div>`;
   });

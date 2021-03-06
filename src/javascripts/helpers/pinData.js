@@ -17,4 +17,11 @@ const getBoardPins = (boardId) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export { getPins, getBoardPins };
+// DELETE PINS
+const deletePin = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/pins/${firebaseKey}.json`)
+    .then(() => getPins().then((pinsArray) => resolve(pinsArray)))
+    .catch((error) => reject(error));
+});
+
+export { getPins, getBoardPins, deletePin };
