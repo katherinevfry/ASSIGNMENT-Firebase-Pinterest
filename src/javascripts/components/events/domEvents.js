@@ -1,6 +1,8 @@
-import pinBoardInfo from '../../helpers/boardPinData';
+import { deleteBoardPins, pinBoardInfo } from '../../helpers/boardPinData';
+import { deletePin } from '../../helpers/pinData';
 import boardInfo from '../boardInfo';
 import createPins from '../pins';
+import createBoards from '../boards';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -11,6 +13,16 @@ const domEvents = () => {
         createPins(boardInfoObject.boardPins);
         boardInfo(boardInfoObject.board);
       });
+    }
+    // DELETE PINS
+    if (e.target.id.includes('delete-pin')) {
+      const firebaseKey = e.target.id.split('^^')[1];
+      deletePin(firebaseKey).then((pinsArray) => createPins(pinsArray));
+    }
+    // DELETE BOARDS AND ASSOCIATED PINS
+    if (e.target.id.includes('delete-board')) {
+      const firebaseKey = e.target.id.split('^^')[1];
+      deleteBoardPins(firebaseKey).then((boardsArray) => createBoards(boardsArray));
     }
   });
 };
