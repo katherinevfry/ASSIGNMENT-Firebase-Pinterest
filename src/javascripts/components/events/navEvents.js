@@ -1,5 +1,5 @@
-import getBoards from '../../helpers/boardData';
-import getPins from '../../helpers/pinData';
+import { getBoards } from '../../helpers/boardData';
+import { getPins } from '../../helpers/pinData';
 import createBoards from '../boards';
 import createPins from '../pins';
 
