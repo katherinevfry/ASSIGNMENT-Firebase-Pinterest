@@ -1,9 +1,47 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import url("https://use.typekit.net/hro4jvn.css");
 
-body {
-  background-color: antiquewhite;
-  color: brown;
+h1 {
+  color: #F93822;
   text-align: center;
-  margin-top: 100px;
+  font-family: pacifico, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#logout-button, #login-button {
+  margin-left: auto;
+}
+
+#pinterest-wordmark {
+  color:#F93822;
+  font-family: pacifico, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2em;
+}
+
+#board-img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  margin: 0;
+}
+
+#board-card {
+  margin: 1em;
+  text-align: center;
+}
+
+#pin-img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  margin: 0;
+}
+
+#pin-card {
+  margin: 1em;
+  text-align: center;
 }
