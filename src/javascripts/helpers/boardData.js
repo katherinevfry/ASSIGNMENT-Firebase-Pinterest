@@ -4,8 +4,8 @@ import firebaseConfig from './apiKeys';
 const dbUrl = firebaseConfig.databaseURL;
 
 // GET Boards
-const getBoards = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/boards.json`)
+const getBoards = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/boards.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
@@ -18,10 +18,24 @@ const getSingleBoard = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // DELETE BOARD
-const deleteBoard = (firebaseKey) => new Promise((resolve, reject) => {
+const deleteBoard = (firebaseKey, uid) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/boards/${firebaseKey}.json`)
-    .then(() => getBoards().then((boardsArray) => resolve(boardsArray)))
+    .then(() => getBoards(uid).then((boardsArray) => resolve(boardsArray)))
     .catch((error) => reject(error));
 });
 
-export { getBoards, getSingleBoard, deleteBoard };
+// CREATE BOARD
+const createBoard = (boardObject, uid) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/boards.json`, boardObject)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/boards/${response.data.name}.json`, body)
+        .then(() => {
+          getBoards(uid).then((boardsArray) => resolve(boardsArray));
+        });
+    }).catch((error) => reject(error));
+});
+
+export {
+  getBoards, getSingleBoard, deleteBoard, createBoard
+};

@@ -1,6 +1,7 @@
-const createBoards = (array) => {
+const buildBoards = (array) => {
   document.querySelector('#header').innerHTML = `
   <h1>Boards</h1>`;
+  document.querySelector('#add-button').innerHTML = '<button class="btn btn-danger btn-lg mb-4" id="add-board-btn">Create Board</button>';
   document.querySelector('#display-area').innerHTML = '';
 
   array.forEach((item) => {
@@ -16,4 +17,4 @@ const createBoards = (array) => {
   });
 };
 
-export default createBoards;
+export default buildBoards;
