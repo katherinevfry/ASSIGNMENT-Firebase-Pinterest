@@ -1,15 +1,15 @@
 import { getBoards } from '../../helpers/boardData';
 import { getPins } from '../../helpers/pinData';
-import createBoards from '../boards';
+import buildBoards from '../boards';
 import createPins from '../pins';
 
-const navEvents = () => {
+const navEvents = (uid) => {
   document.querySelector('#boards-link').addEventListener('click', () => {
-    getBoards().then((boardsArray) => createBoards(boardsArray));
+    getBoards(uid).then((boardsArray) => buildBoards(boardsArray));
   });
 
   document.querySelector('#pins-link').addEventListener('click', () => {
-    getPins().then((pinsArray) => createPins(pinsArray));
+    getPins(uid).then((pinsArray) => createPins(pinsArray));
   });
 };
 

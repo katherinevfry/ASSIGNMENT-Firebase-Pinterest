@@ -1,4 +1,4 @@
-import createBoards from '../components/boards';
+import buildBoards from '../components/boards';
 import domBuilder from '../components/domBuilder';
 import navEvents from '../components/events/navEvents';
 import logoutButton from '../components/logoutButton';
@@ -6,13 +6,13 @@ import { navBuilder } from '../components/navBuilder';
 import { getBoards } from '../helpers/boardData';
 import domEvents from '../components/events/domEvents';
 
-const startApp = () => {
+const startApp = (user) => {
   domBuilder();
   navBuilder();
-  domEvents();
-  navEvents();
+  domEvents(user.uid);
+  navEvents(user.uid);
   logoutButton();
-  getBoards().then((boards) => createBoards(boards));
+  getBoards(user.uid).then((boards) => buildBoards(boards));
 };
 
 export default startApp;
