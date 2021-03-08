@@ -11,10 +11,10 @@ const pinBoardInfo = (authorId) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 // DELETE BOARDS AND THEIR PINS
-const deleteBoardPins = (boardId) => new Promise((resolve, reject) => {
+const deleteBoardPins = (boardId, uid) => new Promise((resolve, reject) => {
   getBoardPins(boardId).then((boardPinsArray) => {
     const deletePins = boardPinsArray.map((pin) => deletePin(pin.firebaseKey));
-    Promise.all(deletePins).then(() => resolve(deleteBoard(boardId)));
+    Promise.all(deletePins).then(() => resolve(deleteBoard(boardId, uid)));
   }).catch((error) => reject(error));
 });
 

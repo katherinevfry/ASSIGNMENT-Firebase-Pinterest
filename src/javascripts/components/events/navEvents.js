@@ -9,7 +9,7 @@ const navEvents = (uid) => {
   });
 
   document.querySelector('#pins-link').addEventListener('click', () => {
-    getPins().then((pinsArray) => createPins(pinsArray));
+    getPins(uid).then((pinsArray) => createPins(pinsArray));
   });
 };
 
