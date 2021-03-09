@@ -1,20 +1,22 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import { deleteBoardPins, pinBoardInfo } from '../../helpers/boardPinData';
-import { createPin, deletePin } from '../../helpers/pinData';
+import {
+  createPin, deletePin, getSinglePin, updatePin
+} from '../../helpers/pinData';
 import boardInfo from '../boardInfo';
 import createPins from '../pins';
 import buildBoards from '../boards';
 import createBoardForm from './createBoardForm';
 import { createBoard } from '../../helpers/boardData';
 import createPinForm from './createPinForm';
-// import firebase from 'firebase';
+import formModal from '../formModal';
+import editPinForm from '../editPinForm';
 
 const domEvents = (uid) => {
   document.querySelector('body').addEventListener('click', (e) => {
     // CLICK EVENT FOR ADDING BOARD FORM
     if (e.target.id.includes('add-board-btn')) {
-      console.warn('CLICKED ADD BOARD BUTTON', e.target.id);
       createBoardForm();
     }
     // GET BOARD INFO OFF FORM
@@ -59,8 +61,24 @@ const domEvents = (uid) => {
     }
     // CLICK EVENT FOR ADDING PIN FORM
     if (e.target.id.includes('add-pin-btn')) {
-      console.warn('CLICKED ADD PIN BUTTON', e.target.id);
       createPinForm();
+    }
+    // CLICK EVENT FOR SHOWING MODAL
+    if (e.target.id.includes('edit-pin-btn')) {
+      const firebaseKey = e.target.id.split('^^')[1];
+      formModal();
+      getSinglePin(firebaseKey).then((pinObject) => editPinForm(pinObject));
+    }
+    // CLICK EVENT FOR EDITING PIN
+    if (e.target.id.includes('update-pin')) {
+      const firebaseKey = e.target.id.split('&&')[1];
+      e.preventDefault();
+      const pinObject = {
+        board_id: document.querySelector('#board').value,
+      };
+      updatePin(firebaseKey, pinObject, uid).then((pinsArray) => createPins(pinsArray));
+
+      $('#formModal').modal('toggle');
     }
   });
 };

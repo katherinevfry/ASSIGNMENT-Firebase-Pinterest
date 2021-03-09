@@ -14,6 +14,9 @@ const navBuilder = () => {
       <li class="nav-item">
         <a class="nav-link" id="pins-link" href="#">Pins</a>
       </li>
+      <li class="nav-item">
+        <a id="user-info"></a>
+      </li>
     </ul>
     <div id="logout-button"></div>
   </div>

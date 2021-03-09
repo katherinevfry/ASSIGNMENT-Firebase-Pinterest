@@ -22,6 +22,10 @@ h1 {
   font-size: 2em;
 }
 
+#add-button {
+  text-align: center;
+}
+
 #board-img {
   height: 150px;
   width: 150px;
@@ -44,4 +48,15 @@ h1 {
 #pin-card {
   margin: 1em;
   text-align: center;
+}
+
+
+#user-info {
+text-align: center;
+}
+
+#user-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
 }
