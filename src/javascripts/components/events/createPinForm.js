@@ -12,11 +12,12 @@ const createPinForm = () => {
       <div class="form-group">
         <label for="image">Image URL</label>
         <input type="url" class="form-control" id="image" placeholder="Image URL" required>
+      </div>
       <div class="form group">
         <label for="description">Description</label>
         <input type="text" class="form-control" id="description" aria-describedby="pinDescription" placeholder="Description" required>
-      <div class="form-group" id="select-board">
       </div>
+      <div class="form-group" id="select-board">
       </div>
         <button type="submit" id="submit-pin" class="btn btn-danger">Submit Pin</button>
       </div>`;
