@@ -3,6 +3,7 @@ const buildBoards = (array) => {
   <h1>Boards</h1>`;
   document.querySelector('#add-button').innerHTML = '<button class="btn btn-danger btn-lg mb-4" id="add-board-btn">Create Board</button>';
   document.querySelector('#display-area').innerHTML = '';
+  document.querySelector('#form-container').innerHTML = '';
 
   array.forEach((item) => {
     document.querySelector('#display-area').innerHTML += `<div class="card" id="board-card">

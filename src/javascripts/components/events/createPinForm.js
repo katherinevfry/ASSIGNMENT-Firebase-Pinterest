@@ -19,7 +19,7 @@ const createPinForm = () => {
       </div>
       <div class="form-group" id="select-board">
       </div>
-        <button type="submit" id="submit-pin" class="btn btn-danger">Submit Pin</button>
+        <button type="button" id="submit-pin" class="btn btn-danger">Submit Pin</button>
       </div>`;
   selectBoard();
 };

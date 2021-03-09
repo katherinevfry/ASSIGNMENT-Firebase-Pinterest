@@ -10,7 +10,7 @@ const createBoardForm = () => {
       <div class="form-group">
         <label for="image">Image URL</label>
         <input type="url" class="form-control" id="image" placeholder="Image URL" required>
-        <button type="submit" id="submit-board" class="btn btn-danger">Submit Board</button>
+        <button type="button" id="submit-board" class="btn btn-danger">Submit Board</button>
       </div>`;
 };
 
