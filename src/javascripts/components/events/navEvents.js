@@ -1,5 +1,5 @@
 import { getBoards } from '../../helpers/boardData';
-import { getPins } from '../../helpers/pinData';
+import { getPins, searchPins } from '../../helpers/pinData';
 import buildBoards from '../boards';
 import createPins from '../pins';
 
@@ -10,6 +10,16 @@ const navEvents = (uid) => {
 
   document.querySelector('#pins-link').addEventListener('click', () => {
     getPins(uid).then((pinsArray) => createPins(pinsArray));
+  });
+
+  document.querySelector('#search').addEventListener('keyup', (e) => {
+    const searchValue = document.querySelector('#search').value.toLowerCase();
+
+    if (e.keyCode === 13) {
+      searchPins(uid, searchValue).then((pinObject) => createPins(pinObject));
+
+      document.querySelector('#search').value = '';
+    }
   });
 };
 

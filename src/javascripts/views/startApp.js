@@ -5,10 +5,12 @@ import logoutButton from '../components/logoutButton';
 import { navBuilder } from '../components/navBuilder';
 import { getBoards } from '../helpers/boardData';
 import domEvents from '../components/events/domEvents';
+import showUserInfo from '../components/showUserInfo';
 
 const startApp = (user) => {
   domBuilder();
   navBuilder();
+  showUserInfo(user);
   domEvents(user.uid);
   navEvents(user.uid);
   logoutButton();

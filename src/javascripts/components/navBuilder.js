@@ -14,10 +14,11 @@ const navBuilder = () => {
       <li class="nav-item">
         <a class="nav-link" id="pins-link" href="#">Pins</a>
       </li>
-      <li class="nav-item">
-        <a id="user-info"></a>
-      </li>
     </ul>
+    <form class="d-flex">
+        <input id="search" class="form-control me-2" type="search" placeholder="Search Pins" aria-label="Search">
+        <button class="btn btn-outline-danger search-button" type="submit">Search</button>
+    </form>
     <div id="logout-button"></div>
   </div>
 </nav>`;

@@ -1,7 +1,7 @@
 const boardInfo = (board) => {
   document.querySelector('#add-button').innerHTML = '';
   document.querySelector('#header').innerHTML += `
-  <h1>${board.title}</h1>`;
+  <h2>${board.title}</h2>`;
 };
 
 export default boardInfo;
