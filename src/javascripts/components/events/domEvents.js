@@ -54,6 +54,7 @@ const domEvents = (uid) => {
         title: document.querySelector('#title').value,
         image: document.querySelector('#image').value,
         description: document.querySelector('#description').value,
+        public: document.querySelector('#public').checked,
         board_id: document.querySelector('#board').value,
         uid: firebase.auth().currentUser.uid,
       };
