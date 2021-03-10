@@ -63,10 +63,10 @@ const domEvents = (uid) => {
     if (e.target.id.includes('add-pin-btn')) {
       createPinForm();
     }
-    // CLICK EVENT FOR SHOWING MODAL
+    // CLICK EVENT FOR SHOWING MODAL TO EDIT PIN
     if (e.target.id.includes('edit-pin-btn')) {
       const firebaseKey = e.target.id.split('^^')[1];
-      formModal();
+      formModal('Edit Pin');
       getSinglePin(firebaseKey).then((pinObject) => editPinForm(pinObject));
     }
     // CLICK EVENT FOR EDITING PIN
