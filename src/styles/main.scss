@@ -21,9 +21,6 @@ h2 {
   margin-left: auto;
 }
 
-.search-button {
-  margin-left: 4px;
-}
 
 #pinterest-wordmark {
   color:#F93822;
@@ -37,22 +34,22 @@ h2 {
   text-align: center;
 }
 
+#submit-pin, #submit-board {
+  margin-top: 6px;
+}
+
 #board-img {
   height: 150px;
   width: 15rem;
   object-fit: cover;
   margin: 0;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
 }
 
-.fa-pen-square {
-  font-size: 40px;
-}
 
 #board-card {
   margin: 1em;
-  text-align: center;
+  text-align: left;
   border: none;
 }
 
@@ -62,14 +59,21 @@ h2 {
   width: 15rem;
   object-fit: cover;
   margin: 0;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
 }
 
 #pin-card {
   margin: 1em;
-  text-align: center;
+  text-align: left;
   border: none;
+}
+
+.fa-trash-alt, .fa-edit {
+  font-size: 20px;
+}
+
+.fa-trash-alt:hover, .fa-edit:hover {
+  color:#F93822;
 }
 
 

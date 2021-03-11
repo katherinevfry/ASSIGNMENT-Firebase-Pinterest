@@ -8,10 +8,11 @@ import boardInfo from '../boardInfo';
 import createPins from '../pins';
 import buildBoards from '../boards';
 import createBoardForm from './createBoardForm';
-import { createBoard } from '../../helpers/boardData';
+import { createBoard, getSingleBoard } from '../../helpers/boardData';
 import createPinForm from './createPinForm';
 import formModal from '../formModal';
 import editPinForm from '../editPinForm';
+import modifyBoard from '../modifyBoard';
 
 const domEvents = (uid) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -29,6 +30,13 @@ const domEvents = (uid) => {
       };
       createBoard(boardObject, uid).then((boardsArray) => buildBoards(boardsArray));
     }
+    // CLICK EVENT FOR EDITING BOARD
+    if (e.target.id.includes('open-edit-modal')) {
+      const firebaseKey = e.target.id.split('^^')[1];
+      formModal('edit board');
+      getSingleBoard(firebaseKey).then((boardObject) => modifyBoard(boardObject));
+      $('#formModal').modal('toggle');
+    }
     // CLICK EVENT FOR SHOWING A BOARD'S PINS
     if (e.target.id.includes('show-pins-btn')) {
       const boardId = e.target.id.split('^^')[1];
@@ -36,6 +44,7 @@ const domEvents = (uid) => {
         createPins(boardInfoObject.boardPins);
         boardInfo(boardInfoObject.board);
       });
+      $('#formModal').modal('toggle');
     }
     // DELETE PINS
     if (e.target.id.includes('delete-pin')) {

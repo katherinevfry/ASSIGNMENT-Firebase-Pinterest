@@ -2,7 +2,7 @@ const createBoardForm = () => {
   document.querySelector('#display-area').innerHTML = '';
   document.querySelector('#add-button').innerHTML = '';
   document.querySelector('#form-container').innerHTML = `
-    <form id="submit-board-form" class="mb-4">
+    <form id="submit-board-form" class="mb-4" style="width: 50rem; margin: 0 auto;">
       <div class="form-group">
         <label for="title">Board Title</label>
         <input type="text" class="form-control" id="title" aria-describedby="boardTitle" placeholder="Enter Board Title" required>
