@@ -4,7 +4,7 @@ import showPublicPins from '../../helpers/showPublicPins';
 import buildBoards from '../boards';
 import createPins from '../pins';
 
-const navEvents = (uid) => {
+const navEvents = (uid, user) => {
   document.querySelector('#boards-link').addEventListener('click', () => {
     getBoards(uid).then((boardsArray) => buildBoards(boardsArray));
   });
@@ -14,7 +14,7 @@ const navEvents = (uid) => {
   });
 
   document.querySelector('#explore-page').addEventListener('click', () => {
-    getPublicPins().then((pinsArray) => showPublicPins(pinsArray));
+    getPublicPins().then((pinsArray) => showPublicPins(pinsArray, user));
   });
 
   document.querySelector('#search').addEventListener('keyup', (e) => {

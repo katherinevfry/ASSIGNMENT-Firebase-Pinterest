@@ -12,7 +12,7 @@ const startApp = (user) => {
   navBuilder();
   showUserInfo(user);
   domEvents(user.uid);
-  navEvents(user.uid);
+  navEvents(user.uid, user);
   logoutButton();
   getBoards(user.uid).then((boards) => buildBoards(boards));
 };
