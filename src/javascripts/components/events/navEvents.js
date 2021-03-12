@@ -1,6 +1,7 @@
 import { getBoards } from '../../helpers/boardData';
 import { getPins, getPublicPins, searchPins } from '../../helpers/pinData';
 import showPublicPins from '../../helpers/showPublicPins';
+// import { mergeUserPins } from '../../helpers/userData';
 import buildBoards from '../boards';
 import createPins from '../pins';
 
@@ -15,6 +16,7 @@ const navEvents = (uid) => {
 
   document.querySelector('#explore-page').addEventListener('click', () => {
     getPublicPins().then((pinsArray) => showPublicPins(pinsArray));
+    // mergeUserPins(uid).then((publicPins) => showPublicPins(publicPins));
   });
 
   document.querySelector('#search').addEventListener('keyup', (e) => {

@@ -7,7 +7,7 @@ const buildBoards = (array) => {
 
   array.forEach((item) => {
     document.querySelector('#display-area').innerHTML += `<div class="card" id="board-card">
-    <div class="card-body" style="height: 300px;">
+    <div class="card-body">
       <img id="board-img" src="${item.image}">
       <h5 class="card-title">${item.title}</h5>
       <i id="open-edit-modal^^${item.firebaseKey}" data-toggle="modal" data-target="#formModal" class="far fa-edit"></i>
