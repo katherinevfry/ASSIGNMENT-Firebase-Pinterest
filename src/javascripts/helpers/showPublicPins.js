@@ -1,4 +1,6 @@
-const showPublicPins = (array, user) => {
+// import formModal from "../components/formModal";
+
+const showPublicPins = (array) => {
   document.querySelector('#header').innerHTML = `
   <h2>Explore</h2>`;
   document.querySelector('#add-button').innerHTML = '';
@@ -12,8 +14,6 @@ const showPublicPins = (array, user) => {
       <h5 class="card-title">${item.title}</h5>
       <p>${item.description}</p>
       <div class="d-flex flex-row">
-        <img id="user-img" src="${user.photoURL}">
-        <h6 id="user-name">${user.displayName}</h6>
       </div>
     </div>
   </div>`;
