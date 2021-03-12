@@ -6,7 +6,6 @@ import { loggedOutNav } from '../components/navBuilder';
 import startApp from '../views/startApp';
 import firebaseConfig from './apiKeys';
 import { getUser } from './userData';
-// import { checkIfUserExists } from './userData';
 
 const checkLoginStatus = () => {
   firebase.initializeApp(firebaseConfig);
