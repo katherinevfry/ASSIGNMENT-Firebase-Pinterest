@@ -1,9 +1,10 @@
 import { getBoards } from '../../helpers/boardData';
-import { getPins, getPublicPins, searchPins } from '../../helpers/pinData';
-import showPublicPins from '../../helpers/showPublicPins';
-// import { mergeUserPins } from '../../helpers/userData';
+import { getPins, searchPins } from '../../helpers/pinData';
+// import showPublicPins from '../../helpers/showPublicPins';
+import { mergeUserPins } from '../../helpers/userData';
 import buildBoards from '../boards';
 import createPins from '../pins';
+// import showUserOnPin from '../showUserOnPin';
 
 const navEvents = (uid) => {
   document.querySelector('#boards-link').addEventListener('click', () => {
@@ -15,8 +16,14 @@ const navEvents = (uid) => {
   });
 
   document.querySelector('#explore-page').addEventListener('click', () => {
-    getPublicPins().then((pinsArray) => showPublicPins(pinsArray));
-    // mergeUserPins(uid).then((publicPins) => showPublicPins(publicPins));
+    mergeUserPins().then((userPinsObject) => {
+      const pubPins = userPinsObject.publicPins;
+      const userInfo = userPinsObject.user;
+      const combinedData = pubPins.filter(() => uid === userInfo.uid);
+      console.warn(combinedData);
+      // showPublicPins(bigObj);
+      // showUserOnPin(bigObj);
+    });
   });
 
   document.querySelector('#search').addEventListener('keyup', (e) => {
