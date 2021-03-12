@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import url("https://use.typekit.net/hro4jvn.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 h1 {
   color: #F93822;
@@ -10,9 +11,16 @@ h1 {
   font-style: normal;
 }
 
+h2 {
+  // font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: Black;
+}
+
 #logout-button, #login-button {
   margin-left: auto;
 }
+
 
 #pinterest-wordmark {
   color:#F93822;
@@ -22,26 +30,66 @@ h1 {
   font-size: 2em;
 }
 
-#board-img {
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-  margin: 0;
-}
-
-#board-card {
-  margin: 1em;
+#add-button {
   text-align: center;
 }
 
-#pin-img {
-  height: 150px;
-  width: 150px;
+#submit-pin, #submit-board {
+  margin-top: 6px;
+}
+
+#board-img {
+  width: 15rem;
   object-fit: cover;
   margin: 0;
+  border-radius: 15px;
+}
+
+
+#board-card {
+  text-align: left;
+  border: none;
+}
+
+
+#pin-img {
+  width: 15rem;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 15px;
 }
 
 #pin-card {
-  margin: 1em;
-  text-align: center;
+  text-align: left;
+  border: none;
+}
+
+.fa-trash-alt, .fa-edit {
+  font-size: 20px;
+}
+
+.fa-trash-alt:hover, .fa-edit:hover {
+  color:#F93822;
+}
+
+
+#user-info {
+text-align: center;
+}
+
+#user-image {
+  height: 75px;
+  width: 75px;
+  border-radius: 100%;
+}
+
+#user-img {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+}
+
+#user-name {
+  align-self: center;
+  margin-left: 4px;
 }

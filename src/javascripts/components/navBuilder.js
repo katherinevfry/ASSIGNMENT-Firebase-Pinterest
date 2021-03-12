@@ -14,7 +14,13 @@ const navBuilder = () => {
       <li class="nav-item">
         <a class="nav-link" id="pins-link" href="#">Pins</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" id="explore-page" href="#">Explore</a>
+      </li>
     </ul>
+    <form class="d-flex">
+        <input id="search" class="form-control me-2" type="search" placeholder="Search Pins" aria-label="Search">
+    </form>
     <div id="logout-button"></div>
   </div>
 </nav>`;
