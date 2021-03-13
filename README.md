@@ -16,7 +16,7 @@ Users can...
 - pin on the go. Responsive design makes this app mobile-friendly
 
 ## Links
-![Project Board](https://github.com/katherinevfry/ASSIGNMENT-Firebase-Pinterest/projects/1)
+[Project Board](https://github.com/katherinevfry/ASSIGNMENT-Firebase-Pinterest/projects/1)
 
 ## Deployed Project
 https://kf-pinterest-dupe.netlify.app
