@@ -22,3 +22,4 @@ Users can...
 https://kf-pinterest-dupe.netlify.app
 
 ## Loom Walkthrough
+https://www.loom.com/share/891cdc53e51a46f4a003e81f8b3a910f
