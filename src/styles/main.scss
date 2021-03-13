@@ -49,6 +49,7 @@ h2 {
 #board-card {
   text-align: left;
   border: none;
+  margin-bottom: 10px;
 }
 
 
@@ -62,6 +63,7 @@ h2 {
 #pin-card {
   text-align: left;
   border: none;
+  margin-bottom: 10px;
 }
 
 .fa-trash-alt, .fa-edit {
@@ -83,7 +85,7 @@ text-align: center;
   border-radius: 100%;
 }
 
-#user-img {
+#public-img {
   height: 30px;
   width: 30px;
   border-radius: 100%;

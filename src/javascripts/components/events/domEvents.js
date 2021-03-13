@@ -66,6 +66,8 @@ const domEvents = (uid) => {
         public: document.querySelector('#public').checked,
         board_id: document.querySelector('#board').value,
         uid: firebase.auth().currentUser.uid,
+        profilePic: firebase.auth().currentUser.photoURL,
+        userName: firebase.auth().currentUser.displayName
       };
       createPin(pinObject, uid).then((pinsArray) => createPins(pinsArray));
     }
