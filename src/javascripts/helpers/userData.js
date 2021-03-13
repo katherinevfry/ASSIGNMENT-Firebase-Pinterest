@@ -36,6 +36,13 @@ const mergeUserPins = () => new Promise((resolve, reject) => {
     )).catch((error) => reject(error));
 });
 
+// const compareUserPins = (uid) => new Promise((resolve, reject) => {
+// getUser(uid).then((userArray) => {
+// const compareData = userArray.map((pin) => getPublicPins(pin.uid));
+// Promise.all(compareData).then(() => resolve())
+// }).catch((error) => reject(error));
+// })
+
 export {
   getUser,
   createUserInfo,
